@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - My Training</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background"></div>
+
+        <div class="auth_wrapper">
+            <h1>Create Account</h1>
+            <form action="http://localhost:8000/register.php" method="post" class="auth_form">
+                <div style="display: flex; flex-direction: column;">
+                    <label for="name" id="name_label">Name</label>
+                    <input class="auth_input" type="text" id="name" name="name" required>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <label for="email" id="email_label">Email</label>
+                    <input class="auth_input" type="email" id="email" name="email" required>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <label for="password" id="password_label">Password</label>
+                    <input class="auth_input" type="password" id="password" name="password" required>
+                </div>
+                <div style="display: flex; justify-content: end; margin-top: 0.5rem;">
+                    <a href="login.html">Already have an account?</a>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
