@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - My Training</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background"></div>
+        <div class="auth_wrapper">
+            <h1>Admin Login</h1>
+
+            <form id="adminLoginForm" class="auth_form">
+                <div id="feedback" aria-live="polite"></div>
+                <div style="display:flex; flex-direction:column;">
+                    <label for="email">Email</label>
+                    <input class="auth_input" type="email" id="email" name="email" required>
+                </div>
+                <div style="display:flex; flex-direction:column;">
+                    <label for="password">Password</label>
+                    <input class="auth_input" type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+                 <div style="text-align:right; margin-top:0.5rem;">
+                    <a href="admin-register.html">Don't have an account?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="scripts/admin-auth.js"></script>
+</body>
+</html>

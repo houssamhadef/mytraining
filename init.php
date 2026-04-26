@@ -36,13 +36,14 @@ FOREIGN KEY (userId) REFERENCES users(id),
 FOREIGN KEY (moduleId) REFERENCES modules(id)
 )";
 
-$sessions = "CREATE TABLE IF NOT EXISTS session (
+$admins = "CREATE TABLE IF NOT EXISTS admins (
 id VARCHAR(36) PRIMARY KEY,
-token VARCHAR(255) NOT NULL,
-userId VARCHAR(36) NOT NULL,
-FOREIGN KEY (userId) REFERENCES users(id),
+nom VARCHAR(50) NOT NULL,
+prenom VARCHAR(50) NOT NULL,
+email VARCHAR(100) NOT NULL UNIQUE,
+passwordHash VARCHAR(255) NOT NULL,
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
     
     $db->exec($users);
@@ -51,8 +52,8 @@ updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     echo "[DB] Modules table exist";
     $db->exec($inscriptions);
     echo "[DB] Inscriptions table exist";
-    $db->exec($sessions);
-    echo "[DB] session table exist";
+    $db->exec($admins);
+    echo "[DB] Admins table exist";
     http_response_code(200);
     echo json_encode(["success" => true]);
 }catch (Exception $error){

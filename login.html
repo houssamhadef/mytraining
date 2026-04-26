@@ -5,31 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - My Training</title>
     <link rel="stylesheet" href="assets/styles/main.css">
-
 </head>
 <body>
     <div class="container">
         <div class="background"></div>
-
         <div class="auth_wrapper">
             <h1>Welcome Back</h1>
-            <form onsubmit="login(event)" class="auth_form">
+
+            <div id="feedback" aria-live="polite"></div>
+
+            <form id="loginForm" class="auth_form">
                 <div style="display: flex; flex-direction: column;">
-                    <label for="email">Email</label>
-                    <input class="auth_input" type="email" id="email" name="email" required>
+                    <label for="identifier">Email or CIN</label>
+                    <input class="auth_input" type="text" id="identifier" name="identifier" required>
                 </div>
                 <div style="display: flex; flex-direction: column;">
-                    <label for="password" id="password_label">Password</label>
+                    <label for="password">Password</label>
                     <input class="auth_input" type="password" id="password" name="password" required>
                 </div>
-                <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
-                    <a href="/">Forgot Password?</a>
-                    <a href="/register.html">Create Account</a>
+                <div style="display: flex; justify-content: flex-end; margin-top: 0.5rem;">
+                    <a href="register.html">Create Account</a>
                 </div>
                 <button type="submit">Login</button>
             </form>
         </div>
     </div>
+
+    <script type="module" src="scripts/auth.js"></script>
 </body>
-<script src="scripts/auth.js"></script>
 </html>

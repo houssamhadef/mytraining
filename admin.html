@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - My Training</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background"></div>
+
+        <nav class="navbar">
+            <div id="navbar_items" class="navbar_items">
+                <h1>My Training — Admin</h1>
+                <button id="logoutBtn" class="secondary-btn">Logout</button>
+            </div>
+        </nav>
+
+        <div class="admin-wrapper">
+            <section class="panel">
+                <h2>Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span id="totalUsers">—</span>
+                        <label>Total Users</label>
+                    </div>
+                    <div class="stat-box">
+                        <span id="totalInscriptions">—</span>
+                        <label>Inscriptions</label>
+                    </div>
+                    <div class="stat-box">
+                        <span id="totalModules">—</span>
+                        <label>Modules</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="table-header">
+                    <h2 style="margin:0">Users</h2>
+                    <input class="auth_input" type="text" id="searchInput" placeholder="Search name, email, CIN..." style="width:240px; margin:0;">
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>CIN</th>
+                                <th>Email</th>
+                                <th>Niveau</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>Inscriptions</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Module</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="inscriptionsBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script type="module" src="scripts/admin.js"></script>
+</body>
+</html>
